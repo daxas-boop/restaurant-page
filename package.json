@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/daxas-boop/restaurant-page#readme",
   "devDependencies": {
+    "http-server": "^0.12.3",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
-  }
+  },
+  "dependencies": {}
 }
