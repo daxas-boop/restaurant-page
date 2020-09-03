@@ -64,11 +64,11 @@ body{
     padding: 15px 8px;
 }
 
-#header nav > a:hover{
-    color: #000;
+#header nav > a:hover, .active{
+    color: #000 !important;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.219);
-    background-color: rgba(0, 0, 0, 0.205);
+    background-color: rgba(0, 0, 0, 0.384);
 }
 
 @keyframes insert {
@@ -129,7 +129,7 @@ body{
     grid-template-columns: 1fr 1fr;
 }
 
-#delivery .social-icon {
+#delivery i {
     margin-right: 10px;
 }
 
@@ -206,6 +206,7 @@ body{
 @media screen and (max-width:768px){
 
     #content {
+        min-width: 100%;
         padding-top: 114px;
         padding-bottom: 73px;
     }
