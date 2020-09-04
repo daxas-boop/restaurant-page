@@ -31,16 +31,17 @@ body{
 }
 
 #header {
+    color: whitesmoke;
     position:absolute;
     top:0;
     left:0;
     width:100%;
     padding: 20px 10px;
-    background-color: #eb7e7e63;
+    background-color: #160808c7;
     display: grid;
     grid-template-columns: 1fr 0.8fr 1.2fr;
     justify-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.534);
+    border: 1px solid rgba(0, 0, 0, 0.63);
 }
 
 #header .logo {
@@ -61,16 +62,62 @@ body{
 #header nav > a {
     font-weight: 550;
     color: rgba(0, 0, 0, 0.700);
+    color: whitesmoke;
     padding: 15px 8px;
 }
 
 #header nav > a:hover, .active{
-    color: #000 !important;
+    color: #45fdeed5 !important;
+    text-shadow: 1px 1px 8px rgb(179, 165, 139);
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.219);
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: rgba(117, 101, 101, 0.445);
 }
 
+#footer {
+    position: fixed;
+    width: 100%;
+    max-width: 1080px;
+    bottom: 0;
+    padding: 10px 10px;
+    background-color: #160808c7;
+    display: grid;
+    grid-template-columns: repeat(3,  1fr);
+    justify-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.534);
+}
+
+#footer #creator {
+    grid-column:3/3;
+    display: flex;
+    align-items: center;
+}
+
+#footer .social-text {
+    color: whitesmoke;
+    margin-right: 3px;
+}
+
+#footer #social-info {
+    display:flex;
+    align-items: center;
+    grid-column:2/3;
+    grid-row:1;
+}
+
+#footer .social-icon {
+    color: aliceblue;
+    margin: 0 5px;
+    margin-top: 3px;
+}
+
+#footer .social-icon:hover {
+    transform: scale(1.2);
+    color: aqua;
+}
+
+
+/* Home Tab */
 @keyframes insert {
     0% {
         transform: translateX(-50%) scale(0.7);
@@ -93,7 +140,7 @@ body{
 }
 
 #welcome {
-    animation: insert 1s linear 1 forwards;
+    animation: insert .7s linear 1 forwards;
     height: 60%;
     width: 80%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -119,7 +166,7 @@ body{
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
     border-radius: 5px;
-    animation: insert 1s linear 1 forwards;
+    animation: insert .7s linear 1 forwards;
     grid-row-start: 2;
     grid-row-end: 4;
     display: grid;
@@ -167,41 +214,93 @@ body{
 #time {
     display: flex;
 }
+/* -------- */
 
-#footer {
-    position: absolute;
-    width: 100%;
-    max-width: 1080px;
-    bottom: 0;
-    padding: 10px 10px;
-    background-color: #eb7e7e63;
-    display: grid;
-    grid-template-columns: repeat(3,  1fr);
+
+/* About Tab */
+#main-content-about {
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
     justify-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.534);
+    align-items: center;
+    height: 100%;
 }
 
-#footer #creator {
-    grid-column:3/3;
+#image-container-about {
+    height: 90%;
+    width: 60%;
+    border-radius: 5px;
     display: flex;
     align-items: center;
+    align-self: flex-end;
 }
 
-#footer .social-text {
-    margin-right: 3px;
+#image-container-about img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
 }
 
-#footer #social-info {
-    display:flex;
+#text-container-about {
+    height: 70%;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    grid-column:2/3;
-    grid-row:1;
+    padding: 0 20px;
+    grid-row:2/3;
 }
 
-#footer .social-icon {
-    margin: 0 5px;
-    margin-top: 3px;
+#text-container-about p {
+    color: whitesmoke;
+    font-size: 20px;
 }
+/* ------- */
+
+/* Menu Tab */
+#main-content-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    height: 100%;
+    width: 70%;
+    margin: 10px auto;
+}
+
+.item {
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.7);;
+    border-radius: 5px;
+    width: 100%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    color: whitesmoke;
+    justify-items: center;
+    align-items: center;
+    font-size:15px;
+}
+
+.item img {
+    align-self: flex-start;
+    grid-column: 1/4;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.item p {
+    text-align: center;
+    grid-column: 1/4;
+}
+
+/* ------- */
+
 
 @media screen and (max-width:768px){
 
@@ -210,7 +309,34 @@ body{
         padding-top: 114px;
         padding-bottom: 73px;
     }
-
+    
+    #header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+    }
+    
+    #header .logo {
+        grid-column:1/2;
+        margin-bottom: 7px;
+    }
+    
+    #footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    #footer #creator {
+        margin-top: 4px;
+        grid-row:2;
+        grid-column-start: 1;
+    }
+    
+    #footer #social-info {
+        grid-column-start: 1;
+        grid-row:1;
+    }
+    
     #welcome {
         width: 90%;
     }
@@ -233,54 +359,47 @@ body{
     #delivery #container-social{
         font-size: .7em;
     }
-   
-    #header {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        justify-content: center;
+
+    #image-container-about {
+        width: 80%;
     }
     
-    #header .logo {
-        grid-column:1/2;
-        margin-bottom: 7px;
-    }
-    
-    #footer {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+    #text-container-about {
+        width: 90%;
     }
 
-    #footer #creator {
-        margin-top: 4px;
-        grid-row:2;
-        grid-column-start: 1;
+    #text-container-about p {
+        font-size: 1em;
     }
 
-    #footer #social-info {
-        grid-column-start: 1;
-        grid-row:1;
+    #main-content-menu {
+        width: 100%;
+        display:block;
     }
 
 }
+
 
 @media screen and (min-width:1920px){
     #header {
         font-size: 1.3em;
     }  
-
+    
     #header .logo h1 {
         font-size: 1.3em;
     } 
-
+    
     #footer{
         font-size: 1.3em;
     }
-
+    
     #delivery #container-social{
         font-size: 1.6em;
     }
-
+    
     #delivery h2 {
         font-size: 3em;
     }
 }
+
+
