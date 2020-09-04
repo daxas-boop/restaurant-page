@@ -9,6 +9,7 @@ html {
     background-image: url('./images/background.png');
     background-color: #cccccc;
     background-repeat: repeat;
+    background-attachment: fixed;
     background-size: 100% 100%;
     background-position: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -116,7 +117,6 @@ body{
     color: aqua;
 }
 
-
 /* Home Tab */
 @keyframes insert {
     0% {
@@ -216,7 +216,6 @@ body{
 }
 /* -------- */
 
-
 /* About Tab */
 #main-content-about {
     display:grid;
@@ -299,9 +298,7 @@ body{
     text-align: center;
     grid-column: 1/4;
 }
-
 /* ------- */
-
 
 @media screen and (max-width:768px){
 
@@ -376,9 +373,7 @@ body{
     #main-content-menu {
         width: 95%;
     }
-
 }
-
 
 @media screen and (min-width:1920px){
     #header {
@@ -401,5 +396,3 @@ body{
         font-size: 3em;
     }
 }
-
-

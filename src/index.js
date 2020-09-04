@@ -2,7 +2,7 @@ import renderHomePage from './home.js';
 import {renderHeader, renderFooter} from './header-footer.js';
 import {renderAbout as $about} from './about.js';
 import {renderMenu as $menu} from './menu.js';
-
+import {renderContact as $contact} from './contact.js'
 
 const $container = document.querySelector('#content');
 
@@ -14,7 +14,6 @@ function initialRender(){
     $container.appendChild($header);
     $container.appendChild($mainElement);
     $container.appendChild($footer);
-    handleTabSwitch()
 }
 
 function renderAbout() {
@@ -42,6 +41,7 @@ function renderContact() {
     $container.innerHTML = '';
     const $header = renderHeader();
     const $footer = renderFooter();
+    const $mainElement = $contact();
     $container.appendChild($header);
     $container.appendChild($footer);
 }
@@ -66,3 +66,4 @@ function handleTabSwitch() {
 }
 
 initialRender();
+handleTabSwitch();
