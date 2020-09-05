@@ -300,6 +300,125 @@ body{
 }
 /* ------- */
 
+
+/* Contact Tab */
+#main-content-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#form-container {
+    justify-self: center;
+    align-self: center;
+    width: 90%;
+    height: 70%;
+    grid-column: 2/3;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#form button {
+    justify-self: center;
+    align-self: center;
+    padding: 10px 10px;
+    color: whitesmoke;
+    background-color: #160808c7;
+    border: 1px solid rgba(41, 40, 40, 0.418);
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#form button:hover,
+#form button:active {
+    cursor: pointer;
+    background-color: rgba(92, 75, 75, 0.815);
+}
+
+#form button:focus{
+    outline: none;
+}
+
+#form > label > input:focus{
+    outline: none;
+}
+
+#form > label,
+#form > label > input {
+    display: block;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+#form > label {
+    text-align:center;
+    width: 80%;
+}
+
+#form > label > input {
+    border: 1px solid rgb(118, 118, 118);
+    width: 100%;
+    padding:3px;
+}
+
+#form label[for=comment] {
+    display: block;
+    width: 80%;
+    height: 20%;
+    margin: 0 auto;
+    text-align: center ;
+}
+
+#form label[for=comment] textarea {
+    resize: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding:4px;
+}
+
+#form label[for=comment] textarea:focus {
+    outline: none;
+}
+
+#social-info-container {
+    height: 60%;
+    width: 60%;
+    margin:  auto;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
+#social-info-container > div {
+    margin: 10px;
+    color: whitesmoke;
+    font-size: 18px;
+}
+
+#social-info-container > div > h2 {
+    margin-bottom: 5px;
+}
+
+/* ------- */
+
 @media screen and (max-width:768px){
 
     #content {
@@ -359,7 +478,7 @@ body{
     }
 
     #image-container-about {
-        width: 80%;
+        width: 65%;
     }
     
     #text-container-about {
@@ -372,6 +491,20 @@ body{
 
     #main-content-menu {
         width: 95%;
+    }
+
+    #social-info-container {
+        height: 80%;
+        width: 90%;
+    }
+
+    #social-info-container > div {
+        font-size:1em;
+    }
+
+    #form-container {
+        height: 80%;
+        width: 100%;
     }
 }
 
@@ -394,5 +527,23 @@ body{
     
     #delivery h2 {
         font-size: 3em;
+    }
+
+    #form-container {
+        height: 60%;
+        font-size:1.5em;
+    }
+
+    #form > label > input {
+        padding:5px;
+    }
+
+    #form button {
+        font-size:.9em;
+        padding: 12px;
+    }
+
+    #social-info-container > div {
+       font-size: 1.3em;
     }
 }
