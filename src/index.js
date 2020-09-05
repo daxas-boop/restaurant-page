@@ -24,7 +24,6 @@ function renderAbout() {
     $container.appendChild($header);
     $container.appendChild($mainElement);
     $container.appendChild($footer);
-    
 }
 
 function renderMenu() {
@@ -43,6 +42,7 @@ function renderContact() {
     const $footer = renderFooter();
     const $mainElement = $contact();
     $container.appendChild($header);
+    $container.appendChild($mainElement);
     $container.appendChild($footer);
 }
 
