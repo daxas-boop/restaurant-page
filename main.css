@@ -506,6 +506,10 @@ body{
         height: 80%;
         width: 100%;
     }
+
+    #form label[for=comment] textarea {
+        height: 80%;
+    }
 }
 
 @media screen and (min-width:1920px){
