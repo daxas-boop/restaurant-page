@@ -1,16 +1,17 @@
-import renderHomePage from './home.js';
-import {renderHeader, renderFooter} from './header-footer.js';
-import {renderAbout as $about} from './about.js';
-import {renderMenu as $menu} from './menu.js';
-import {renderContact as $contact} from './contact.js'
+import createHomePage from './home.js';
+import createHeader from './header.js';
+import createFooter from './footer.js';
+import createAbout from './about.js';
+import createMenu from './menu.js';
+import createContact from './contact.js';
 
 const $container = document.querySelector('#content');
 
-function initialRender(){
+function renderHomePage(){
     $container.innerHTML = '';
-    const $header = renderHeader();
-    const $footer = renderFooter();
-    const $mainElement = renderHomePage();
+    const $header = createHeader();
+    const $footer = createFooter();
+    const $mainElement = createHomePage();
     $container.appendChild($header);
     $container.appendChild($mainElement);
     $container.appendChild($footer);
@@ -18,9 +19,9 @@ function initialRender(){
 
 function renderAbout() {
     $container.innerHTML = '';
-    const $header = renderHeader();
-    const $footer = renderFooter();
-    const $mainElement = $about();
+    const $header = createHeader();
+    const $footer = createFooter();
+    const $mainElement = createAbout();
     $container.appendChild($header);
     $container.appendChild($mainElement);
     $container.appendChild($footer);
@@ -28,9 +29,9 @@ function renderAbout() {
 
 function renderMenu() {
     $container.innerHTML = '';
-    const $header = renderHeader();
-    const $footer = renderFooter();
-    const $mainElement = $menu();
+    const $header = createHeader();
+    const $footer = createFooter();
+    const $mainElement = createMenu();
     $container.appendChild($header);
     $container.appendChild($mainElement);
     $container.appendChild($footer);
@@ -38,9 +39,9 @@ function renderMenu() {
 
 function renderContact() {
     $container.innerHTML = '';
-    const $header = renderHeader();
-    const $footer = renderFooter();
-    const $mainElement = $contact();
+    const $header = createHeader();
+    const $footer = createFooter();
+    const $mainElement = createContact();
     $container.appendChild($header);
     $container.appendChild($mainElement);
     $container.appendChild($footer);
@@ -59,11 +60,11 @@ function handleTabSwitch() {
     const $contact = document.querySelector('#contact');
     const $about = document.querySelector('#about');
 
-    $home.addEventListener('click', e =>{initialRender(), addActiveClass(e), handleTabSwitch();})
+    $home.addEventListener('click', e =>{renderHomePage(), addActiveClass(e), handleTabSwitch();})
     $menu.addEventListener('click', e =>{renderMenu(), addActiveClass(e), handleTabSwitch();})
     $contact.addEventListener('click', e =>{renderContact(), addActiveClass(e), handleTabSwitch();})
     $about.addEventListener('click', e => {renderAbout(), addActiveClass(e), handleTabSwitch();})
 }
 
-initialRender();
+renderHomePage();
 handleTabSwitch();
