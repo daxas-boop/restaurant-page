@@ -4,7 +4,8 @@
   "description": "restaurant page for TOP",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ./src", 
+    "lint:fix": "eslint ./src --fix"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,13 @@
   },
   "homepage": "https://github.com/daxas-boop/restaurant-page#readme",
   "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "http-server": "^0.12.3",
+    "prettier": "^2.1.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
